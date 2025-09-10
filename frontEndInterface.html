@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Orbital</title>  <!--title of the web page when loaded -->
+    <link rel="stylesheet" href="frontEndInterface.css" type="text/css">  <!--connects the HTML and CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--calls the website where the HTML code for icons is located-->
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">  
+  </head>
+
+  <body>
+    <div class="mainAtomSection"> <!-- the location of the rest of the web page (- the sidebar) -->
+      <div id="atom-Section">  <!-- the id for the location of the canvas-->
+        <canvas id="orbitalDensityRegionCanvas"></canvas> <!-- name of the canvas itself. called to QuantumOrbitalRgeions.js-->
+    </div>
+    
+    <div class="sidebar ">
+      <div class = "logo-details ">
+        <i class='bx bx-atom'></i> <!-- code for the logos-->
+        <span class = "logo_name">Atomic Electron Orbital Density Region</span> <!-- title of the centre of the page-->
+    </div>
+
+
+
+    <ul class = "nav-links">
+      <li>
+        <div class="iocn-link">
+          <a href = "#">
+          <i class='bx bxs-grid-alt' ></i>
+          <span class="link_name">Principal</span> <!-- title for principal. location of where the user will be able to choose n quantum states -->
+        </a>
+        <i class = 'bx bxs-chevron-down arrow'></i> <!-- code for the arrows that the useer will be able to interact with -->
+        </div>
+        <ul class="sub-menu ">
+        <li><a class = "link_name" href="#"></a></li>
+        <div id="QuantumStatesNumbers">
+        <select id="principalQuantumNumber"> <!-- user selects this and result chosen will be called to QuantumOrbitalRegions.js -->
+          <option>n = 1</option>
+          <option>n = 2</option>
+          <option>n = 3</option>
+          <option>n = 4</option>
+          <option>n = 5</option>
+          <option>n = 6</option>
+          <option>n = 7</option>
+          <option>n = 8</option>
+          <option>n = 9</option>
+          <option>n = 10</option>
+          <option>n = 11</option>
+          <option>n = 12</option>
+          <option>n = 13</option>
+          <option>n = 14</option>
+          <option>n = 15</option>
+          <option>n = 16</option>
+        </select><br>
+        </div>
+        </ul>
+      </li>
+
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bxs-collection'></i>
+            <span class="link_name">Azimuthal</span> 
+          </a>
+          <i class = 'bx bxs-chevron-down arrow'></i>
+        </div>
+
+        <ul class="sub-menu">
+          <li><a class = "link_name" href="#"></a></li>
+          <div id = "QuantumStatesNumbers">
+          <select id="azimuthalQuantumNumber"></select><!-- user selects this and result chosen will be called to QuantumOrbitalRegions.js -->
+          <!-- no select id for this value since this will be decided by the user's chosen principal quantum number(n state)b  --> 
+          <option> </option> 
+          </div>
+        </ul> 
+      </li>
+
+
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bxs-book-alt'></i>
+            <span class="link_name">Magnetic</span><!-- user selects this and result chosen will be called to QuantumOrbitalRegions.js -->
+          </a>                                     <!-- currently has no selection range due to dependancy of the user when they choose which n state--> 
+          <i class = 'bx bxs-chevron-down arrow'></i> <!--arrow feature that rotates 180 degrees upon users click
+          <!arrow feature will reveal the options available when pressed-->
+          <!--will show as an option once n has been decided by user-->
+        </div> 
+        <ul class="sub-menu">
+          <li>
+          <div id = "QuantumStatesNumbers">
+          <select id="magneticQuantumNumber"></select>
+        </div>
+        </ul>
+      </li>  
+
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bxs-plug' ></i>
+            <span class="link_name">Settings</span> <!--settings section of the user's sidebar-->
+          </a>
+          <i class = 'bx bxs-chevron-down arrow'></i><!-- accessable when the user clicks on the arrow -->
+        </div> 
+          <ul class = "sub-menu">
+    
+          <div class="dropdown"> <!-- user has the option to see real || imaginery components of the orbital region -->
+            <div class ="SettingsInputChecker">Real Component: <input type = "checkbox" id = "realCheck" checked></div>
+            <div class ="SettingsInputChecker">Imaginary Component:<input type = "checkbox" id = "imaginaryCheck" checked></div>
+          </div>
+        </li>
+      
+
+        <!-- script tag allowing the dropdown menu to be shown when the user clicks the arrow head -->
+      <script>  
+        let arrow = document.querySelectorAll(".arrow");
+        for(var i = 0; i < arrow.length; i++){
+          arrow[i].addEventListener("click", (e)=>{
+            console.log(e)
+            let arrowParent = e.target.parentElement.parentElement
+            console.log(arrowParent);
+            arrowParent.classList.toggle("showMenu")
+        });
+      }
+    
+    
+      </script>
+    
+  
+    </div>
+  </body>  <!-- linkage between the HTML and JavaScipt code. this is how the user's chosen quantum state will be retrieved -->
+  <script src="orbitalRegionMatrices.js"></script> <!-- as well as the canvas region ( used for displaying visualisation in javaScript)-->
+  <script type="module" src="orbitalRegionRendering.js"></script>
+
+
+</html>

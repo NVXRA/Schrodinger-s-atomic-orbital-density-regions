@@ -1,0 +1,141 @@
+/* ===== Reset ===== */
+* { 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* ===== Canvas ===== */
+canvas {
+    height: 90%;
+    width: 80%;
+    background-color: rgb(19, 20, 20);
+    margin: auto;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin-right: 4.5cm;
+    margin-left: 6.5cm;
+}
+
+body {
+    overflow: hidden; /* removes scrollbars */
+}
+
+/* ─── TITLE BAR OVERRIDE ─── */
+.logo-details {
+  position: fixed !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 100% !important;
+  height: 60px !important;
+  padding: 0 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #000000 !important;
+  border-bottom: 2px solid #ffffff !important;
+  z-index: 9999 !important;
+}
+
+.logo-details i {
+    margin-right: 10px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.logo-details .logo_name {
+    font-size: 17px;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px; /* fixed width */
+    background: #000000;
+    border-right: 2px solid rgb(253, 253, 253);
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px; /* space for title bar if needed */
+    z-index: 1000;
+}
+
+
+/* ===== Sidebar Menu ===== */
+.sidebar .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* equal spacing between each main option */
+    padding: 20px 0;
+}
+
+.sidebar .nav-links li {
+    list-style: none;
+}
+
+.sidebar .nav-links li:hover {
+    background: #7d7d7d;
+}
+
+.sidebar .nav-links li .iocn-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar .nav-links li i {
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li.showMenu i.arrow {
+    transform: rotate(-180deg);
+}
+
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 12px 0; /* bigger clickable area */
+}
+
+.sidebar .nav-links li a .link_name {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* ===== Submenu Styling ===== */
+.sidebar .nav-links li .sub-menu {
+    padding: 10px 6px 15px 80px;
+    background: #1d1b31;
+    display: none;
+}
+
+.sidebar .nav-links li .sub-menu .dropdown {
+    padding: 6px 6px 30px;
+    background: #1d1b31;
+    color: #fff;
+}
+
+.sidebar .nav-links li.showMenu .sub-menu {
+    display: block;
+}
+
+/* ===== Main Atom Section ===== */
+.mainAtomSection {
+    margin-right: 0px;
+    height: 100vh;
+    border: 2px solid rgb(255, 255, 255);
+    background: #000000;
+}
