@@ -48,5 +48,3 @@ This visualiser:
 - **Linear algebra & quantum mechanics** for the maths
 
 ---
-
-## Project Structure
